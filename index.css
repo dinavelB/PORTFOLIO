@@ -15,6 +15,7 @@ nav{
     left: 5%;
     width: 90%;
     overflow: hidden;
+    z-index: 1000;
 }
 nav ul{
     list-style-type: none;
@@ -36,22 +37,200 @@ nav div{
     gap: 15px;
     padding-left: 100px;
 }
+@media (max-width: 650px) {
+    nav li{
+        display: none;
+    }
+    nav .Contact{
+        display: inline;
+    }
+    nav div{
+        display: flex;
+        margin-left: -90px;
+    }
+    nav div h1{
+      font-size: 20px;  
+    } nav img{
+    grid-area: logo;
+    object-fit: contain;
+    height: 70px;
+    }
+}
 .heroSectionWrap{
-    padding: 2in 0.5in 0in 0.5in;
+    padding: 2in 2in 0in 2.5in;
     display: grid;
     grid-template-areas: 'intro img'
     'links img';
+}
+@media (max-width: 650px) {
+    .heroSectionWrap{
+        display: flex;
+        flex-direction: column;
+        padding: 120px 2px 0px 2px;
+        width: 400px;
+        gap: 30px;
+    }
+    .img img{
+        margin-left: -40px;
+    }
+    .heroSectionWrap article{
+        display: flex;
+        flex-direction: column;
+    }
+    .bestSkill{
+        margin-top: -150px;
+    }
+}  
+.wrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .heroSectionWrap article{
     grid-area: links;
     display: flex;
     gap: 10em
 }.img{
-    background-color: aliceblue;
     grid-area: img;
-} 
+}.img img{
+    object-fit: contain;
+    width: 500px;
+}
 .intro{
     grid-area: intro;
 }.intro span{
     color: #A30822;
+}article i{
+    color: #A30822;
+    padding: 20px;
+    font-size: 20px;
+    margin-right: 20px;
+    background-color: #FFF2F2;
+    box-shadow: 5px 5px 5px 0px gray;
 }
+.wrapPortfolio{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.portfolio{
+    padding-top: 200px;
+}
+.allPortfolios{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr);
+    gap: 100px
+}
+@media (max-width: 650px){
+    .allPortfolios{
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.allPortfolios div{
+    border-radius: 20px;
+    height: 400px;
+    width: 400px;
+    background-color: #FFF2F2;
+    transition: transform 0.3s ease;
+    box-shadow: 5px 5px 5px 0px gray;
+}
+.allPortfolios div:hover{
+    transform: translateY(-9px); 
+    box-shadow: 5px 5px 13px 0px gray;
+
+}
+.resumeWrap:first-child{
+    display: flex;
+    justify-content: center;
+}
+.resume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
+    gap: 20px;
+}
+#toggleBtn button{
+    font-size: 18px;
+    padding: 20px;
+    width: 250px;
+    border: none;
+    transition: all 0.3s ease;
+}
+#toggleBtn button:first-child:hover{
+    background-color: #FFF2F2;
+    color: #A30822;
+    border-radius: 20px;
+    box-shadow: -5px 5px 10px 0px gray;
+}
+#toggleBtn button:last-child:hover{
+    background-color: #FFF2F2;
+    color: #A30822;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 0px gray;
+}
+#toggleBtn{
+    border-radius: 20px;
+    display: inline-block;
+    background-color: #E5E5E5;
+    box-shadow: 5px 5px 10px 0px gray;
+}
+.animate-on-scroll{
+    opacity: 0;
+    transition: all 1s ease;
+}
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+.educationWrap{
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.items{
+    height: 300px;
+    width: 300px;
+    background-color: aquamarine;
+}.education{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.education div{
+    background-color: #FFF2F2;
+    width: 400px;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 0px gray;
+    transition: all 0.3s ease;
+}
+.education div:hover{
+    background-color: #E91639;
+    color: #FFFFFF;
+}
+.professional{
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+}
+.professional div{
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+}
+@media (max-width: 650px) {
+    #toggleBtn button{
+        width: 200px;
+    }
+    .education div{
+        width: 300px;
+    }
+}
+
