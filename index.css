@@ -167,6 +167,13 @@ nav div{
     border-radius: 20px;
     box-shadow: -5px 5px 10px 0px gray;
 }
+#educationBtn.show,
+#professionalBtn.show{
+    background-color: #FFF2F2;
+    color: #A30822;
+    border-radius: 20px;
+    box-shadow: -5px 5px 10px 0px gray;
+}
 #toggleBtn button:last-child:hover{
     background-color: #FFF2F2;
     color: #A30822;
@@ -192,12 +199,14 @@ nav div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    min-height: 600px;
 }.items{
     height: 300px;
     width: 300px;
     background-color: aquamarine;
 }.education{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;

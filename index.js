@@ -1,12 +1,11 @@
 const animateElements = document.querySelectorAll('.animate-on-scroll');
 const eduBtn = document.querySelector('#educationBtn');
 const professionalBtn = document.querySelector('#professionalBtn')
+const educationScroll = document.querySelectorAll('.animate_scroll')
 //querySelectorAll for selecting all elements with a same class
 
 const education = document.querySelector('.education');
 const professional = document.querySelector('.professional')
-
-
 
 function handleAnimating(){
     const triggerZone = window.innerHeight * 0.85;
@@ -26,28 +25,30 @@ function handleAnimating(){
  window.addEventListener('scroll', handleAnimating);
   handleAnimating();
 
-  eduBtn.addEventListener('click', ()=>{
-    //getComputedStyle method use to read the css file
-    const currentStyle = getComputedStyle(education).display;
-    const currentStyle = getComputedStyle(profe).display;
 
-        if(currentStyle=== 'none'){
-            education.style.display = 'flex'
-            professional.style.display = 'none'
-        } else{
-            education.style.display = 'none'
-        }
-  })
-    professionalBtn.addEventListener('click', ()=>{
-    //getComputedStyle method use to read the css file
-    const current = getComputedStyle(professional).display;
+  //default
+  eduBtn.classList.add('show')
 
-        if(current === 'none'){
-            professional.style.display = 'flex'
-            education.style.display = 'none'
-        } else{
-            professional.style.display = 'none'
-        }
+  
+    eduBtn.addEventListener('click', () => {
+    education.style.display = 'flex';
+    professional.style.display = 'none';
+
+    eduBtn.classList.add('show')
+     professionalBtn.classList.remove('show')
+    //method given by web
+    //education.scrollIntoView({ behavior: 'smooth' });
+    })
 
 
-  })
+professionalBtn.addEventListener('click', () => {
+
+    professionalBtn.classList.add('show')
+    eduBtn.classList.remove('show')
+
+    professional.style.display = 'grid';
+    education.style.display = 'none';
+
+    //method given by web
+    //professional.scrollIntoView({ behavior: 'smooth' });
+});  
